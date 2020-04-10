@@ -71,6 +71,17 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    @if (Auth::user()->roles == "Societe")
+                                    <a class="dropdown-item" href="{{ route('profile') }}">
+                                        Mon profile
+                                    </a>
+                                    <a class="dropdown-item" href="">
+                                        Mes Offres
+                                    </a>
+                                    <a class="dropdown-item" href="">
+                                        Mes Demandes
+                                    </a>
+                                    @endif
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

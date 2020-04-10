@@ -36,4 +36,16 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+   
+
+      //
+
+     /**
+     * Get the society for the selected user.
+     */
+    public function society()
+    {
+        return $this->hasOne('App\Societe','iduser','id');
+    }
 }

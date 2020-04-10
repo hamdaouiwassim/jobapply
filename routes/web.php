@@ -23,3 +23,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/about', 'HomePagesController@about')->name('about');
 Route::get('/blog', 'HomePagesController@blog')->name('blog');
 Route::get('/contact', 'HomePagesController@contact')->name('contact');
+Route::get('/profile', 'HomeController@profile')->name('profile');

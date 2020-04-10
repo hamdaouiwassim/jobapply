@@ -15,10 +15,10 @@ class CreateOffresTable extends Migration
     {
         Schema::create('offres', function (Blueprint $table) {
             $table->id();
-            $table->integer("name");
-            $table->integer("description");
-            $table->integer("category");
-            $table->integer("lastday")->nulleable();
+            $table->string("name");
+            $table->text("description");
+            $table->string("category");
+            $table->date("lastday")->nullable();
             $table->integer("userid");
             $table->timestamps();
         });
