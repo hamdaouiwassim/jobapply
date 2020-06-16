@@ -33,6 +33,7 @@
     <link rel="stylesheet" href="{{ asset("css/flaticon.css")}}">
     <link rel="stylesheet" href="{{ asset("css/icomoon.css")}}">
     <link rel="stylesheet" href="{{ asset("css/style.css")}}">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" >
 
 </head>
 <body>
@@ -75,11 +76,34 @@
                                     <a class="dropdown-item" href="{{ route('profile') }}">
                                         Mon profile
                                     </a>
-                                    <a class="dropdown-item" href="">
+                                    <a class="dropdown-item" href="{{ route('offers') }}">
                                         Mes Offres
                                     </a>
                                     <a class="dropdown-item" href="">
                                         Mes Demandes
+                                    </a>
+                                    @elseif ( Auth::user()->roles == "Condidate" )
+                                    <a class="dropdown-item" href="{{ route('profile') }}">
+                                        Mon profile
+                                    </a>
+                                    <a class="dropdown-item" href="{{ route('mescondidatures') }}">
+                                        Mes Condidatures
+                                    </a>
+                                    <a class="dropdown-item" href="{{ route('offersCondidates') }}">
+                                        Les offres
+                                    </a>
+                                    <a class="dropdown-item" href="{{ route('SocieteAll') }}">
+                                        Les societes
+                                    </a>
+                                    @else
+                                    <a class="dropdown-item" href="{{ route('profile') }}">
+                                        Mon profile
+                                    </a>
+                                    <a class="dropdown-item" href="{{ route('mesdemandes') }}">
+                                        Mes Demandes
+                                    </a> 
+                                    <a class="dropdown-item" href="{{ route('SocieteAll') }}">
+                                        Les societes
                                     </a>
                                     @endif
                                     <a class="dropdown-item" href="{{ route('logout') }}"
@@ -118,5 +142,11 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
     <script src="{{ asset("js/google-map.js")}}"></script>
     <script src="{{ asset("js/main.js")}}"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
+    <script>
+        $(document).ready( function () {
+            $('#table').DataTable();
+        } );
+    </script>
 </body>
 </html>

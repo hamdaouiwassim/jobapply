@@ -21,18 +21,49 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+  
     public function index()
     {
-        if (Auth::user()->society != null ){
-            return view('societes.home');
+        if ( Auth::user()->roles == "Societe"  ){
+            if (  Auth::user()->society != null ){
+                return view('societes.home');
+            }
+            return view('societes.first');
+        }else if ( Auth::user()->roles == "Condidate" ){
+            if (  Auth::user()->condidate != null ){
+                return view('condidates.home'); 
+            }
+            return view('condidates.first');
+        }else{
+            if (  Auth::user()->stagaire != null ){
+                return view('stagaires.home');
+            }
+            return view('stagaires.first');
         }
-        return view('societes.first');
+        
     }
 
     public function profile()
     {
         
-            return view('societes.profile');
+        if ( Auth::user()->roles == "Societe"  ){
+            if (  Auth::user()->society != null ){
+                return view('societes.profile')->with('societe',Auth::user()->society);
+            }
+            return view('societes.first');
+        }else if ( Auth::user()->roles == "Condidate" ){
+            if (  Auth::user()->condidate != null ){
+
+                return view('condidates.profile')->with('condidate',Auth::user()->condidate); 
+            }
+
+            return view('condidates.first');
+        }else{
+            if (  Auth::user()->stagaire != null ){
+                return view('stagaires.profile')->with('stagaire',Auth::user()->stagaire);
+            }
+            return view('stagaires.first');
+        }
         
     }
 

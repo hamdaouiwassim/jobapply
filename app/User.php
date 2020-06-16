@@ -48,4 +48,23 @@ class User extends Authenticatable
     {
         return $this->hasOne('App\Societe','iduser','id');
     }
+
+    //
+
+     /**
+     * Get the condidate for the selected user.
+     */
+    public function condidate()
+    {
+        return $this->hasOne('App\Condidate','iduser','id');
+    }
+         //
+
+     /**
+     * Get the stagaire for the selected user.
+     */
+    public function stagaire()
+    {
+        return $this->hasOne('App\Stagaire','iduser','id');
+    }
 }

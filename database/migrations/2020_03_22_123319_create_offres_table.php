@@ -19,6 +19,10 @@ class CreateOffresTable extends Migration
             $table->text("description");
             $table->string("category");
             $table->date("lastday")->nullable();
+            $table->string("contrat");
+            $table->integer("salaire");
+            $table->string("location");
+            $table->string("engagement")->nullable();
             $table->integer("userid");
             $table->timestamps();
         });

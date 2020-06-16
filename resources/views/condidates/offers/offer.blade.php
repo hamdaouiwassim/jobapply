@@ -65,275 +65,88 @@
 	    </div>
 	  </nav>
     <!-- END nav -->
-    
-    <div class="hero-wrap js-fullheight">
-      <div class="overlay"></div>
-      <div class="container-fluid px-0">
-      	<div class="row d-md-flex no-gutters slider-text align-items-end js-fullheight justify-content-end">
-	      	<img class="one-third align-self-end order-md-last img-fluid" src="images/undraw_work_time_lhoj.svg" alt="">
-	        <div class="one-forth d-flex align-items-center ftco-animate js-fullheight">
-	        	<div class="text mt-5">
-	        		<p class="mb-4 mt-5 pt-5">We have <span class="number" data-number="200000">0</span> great job offers you deserve!</p>
-	            <h1 class="mb-5">Largets Job Site In The World</h1>
 
-				
-	          </div>
-	        </div>
-	    	</div>
+    <div class="hero-wrap hero-wrap-2" style="background-image: url('{{asset('images/bg_1.jpg')}}');" data-stellar-background-ratio="0.5">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text align-items-end justify-content-start">
+          <div class="col-md-8 ftco-animate text-center text-md-left mb-5">
+          	<p class="breadcrumbs mb-0"><span class="mr-3"><a href="index.html">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>Offres</span></p>
+          <h1 class="mb-3 bread">Offre : {{ $offer->name }}</h1>
+          </div>
+        </div>
       </div>
     </div>
-	<section class="ftco-section bg-light">
-		<div class="container">
-			<div class="row">
-				<div class="ftco-search">
-						<div class="row">
-				<div class="col-md-12 nav-link-wrap">
-					<div class="nav nav-pills text-center" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-					  <a class="nav-link active mr-md-1" id="v-pills-1-tab" data-toggle="pill" href="#v-pills-1" role="tab" aria-controls="v-pills-1" aria-selected="true">Find a Job</a>
 
-					 
-					</div>
-				  </div>
-				  <div class="col-md-12 tab-wrap">
-					
-					<div class="tab-content p-4" id="v-pills-tabContent">
 
-					  
+   
+ 
 
-					  <div class="tab-pane fade show active" id="v-pills-2" role="tabpanel" aria-labelledby="v-pills-performance-tab">
-						  <form action="/condidate/offers/search" class="search-job" method="post">
-					  @csrf		              		<div class="row">
-								  <div class="col-md">
-									  <div class="form-group">
-										  <div class="form-field">
-							  <div class="icon"><span class="icon-briefcase"></span></div>
-							  <input type="text" class="form-control" name="offerTitle" placeholder="eg. Garphic. Web Developer">
-										  </div>
-									  </div>
-								  </div>
-								  <div class="col-md">
-									  <div class="form-group">
-										  <div class="form-field">
-											  <div class="select-wrap">
-										  <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-								<select name="offerEngagement" id="" class="form-control">
-								  <option value="">Category</option>
-								  <option value="Temps complet">Temps complet</option>
-								  <option value="Temps partielle">Temps partielle</option>
-								  <option value="Travaille libre">Travaille libre</option>
-								  
-								</select>
-										</div>
-										  </div>
-									  </div>
-								  </div>
-								  <div class="col-md">
-									  <div class="form-group">
-										  <div class="form-field">
-											  <div class="icon"><span class="icon-map-marker"></span></div>
-												<input type="text" name="offerLocation" class="form-control" placeholder="Location">
-										  </div>
-									  </div>
-								  </div>
-								  <div class="col-md">
-									  <div class="form-group">
-										  <div class="form-field">
-											<button type="submit" class="form-control btn btn-secondary">Search</button>
-										  </div>
-									  </div>
-								  </div>
-							  </div>
-						  </form>
-					  </div>
-					</div>
-				  </div>
-				</div>
-			</div>
-			</div>
-		</div>
-	</section>
-    <section class="ftco-section services-section bg-primary">
-      <div class="container">
-        <div class="row d-flex">
-          <div class="col-md-3 d-flex align-self-stretch ftco-animate">
-            <div class="media block-6 services d-block">
-              <div class="icon"><span class="flaticon-resume"></span></div>
-              <div class="media-body">
-                <h3 class="heading mb-3">Search Millions of Jobs</h3>
-                <p>A small river named Duden flows by their place and supplies.</p>
-              </div>
-            </div>      
-          </div>
-          <div class="col-md-3 d-flex align-self-stretch ftco-animate">
-            <div class="media block-6 services d-block">
-              <div class="icon"><span class="flaticon-collaboration"></span></div>
-              <div class="media-body">
-                <h3 class="heading mb-3">Easy To Manage Jobs</h3>
-                <p>A small river named Duden flows by their place and supplies.</p>
-              </div>
-            </div>    
-          </div>
-          <div class="col-md-3 d-flex align-self-stretch ftco-animate">
-            <div class="media block-6 services d-block">
-              <div class="icon"><span class="flaticon-promotions"></span></div>
-              <div class="media-body">
-                <h3 class="heading mb-3">Top Careers</h3>
-                <p>A small river named Duden flows by their place and supplies.</p>
-              </div>
-            </div>      
-          </div>
-          <div class="col-md-3 d-flex align-self-stretch ftco-animate">
-            <div class="media block-6 services d-block">
-              <div class="icon"><span class="flaticon-employee"></span></div>
-              <div class="media-body">
-                <h3 class="heading mb-3">Search Expert Candidates</h3>
-                <p>A small river named Duden flows by their place and supplies.</p>
-              </div>
-            </div>      
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="ftco-section">
-    	<div class="container">
-    		<div class="row justify-content-center mb-5 pb-3">
-          <div class="col-md-7 heading-section text-center ftco-animate">
-          	<span class="subheading">Job Categories</span>
-            <h2 class="mb-4">Top Categories</h2>
-          </div>
-        </div>
-        <div class="row">
-			@php $i = 0; @endphp
-			<div class="col-md-3 ftco-animate">
-				<ul class="category">
-			@foreach ($categories as $categorie )
-				
-			@php $i++; @endphp
-			@if ($i % 4 != 0 )
-					<li><a href="/condidate/offers/{{ $categorie->id }}">{{ $categorie->name }} <br><span class="number">{{ count($categorie->offers ) }}</span> <span>Open position</span><i class="ion-ios-arrow-forward"></i></a></li>
-			@else 
-			<li><a href="/condidate/offers/{{ $categorie->id }}">{{ $categorie->name }} <br><span class="number">{{ count($categorie->offers ) }}</span> <span>Open position</span><i class="ion-ios-arrow-forward"></i></a></li>
-		
-				</ul>
-			</div>
-			<div class="col-md-3 ftco-animate">
-				<ul class="category">
-			@endif 	
-				
-			@endforeach
-		</ul>
-	</div>
-        
-        	
-        </div>
-    	</div>
-    </section>
-
-    <section class="ftco-section img" style="background-image: url(images/bg_1.jpg); background-position: top center;">
-    	<div class="container">
-    		<div class="row">
-    			<div class="col-md-6">
-    				<div class="browse-job p-5">
-    					<span class="icon-search2 icon"></span>
-    					<span class="subheading">Search Job</span>
-    					<h2>Browse Job by Specialism</h2>
-    					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-    				</div>
-    			</div>
-    		</div>
-    	</div>
-    </section>
+  
 
 		<section class="ftco-section bg-light">
 			<div class="container">
 				<div class="row">
-					<div class="col-lg-9 pr-lg-5">
+					<div class="col-lg-12 pr-lg-5">
 						<div class="row justify-content-center pb-3">
 		          <div class="col-md-12 heading-section ftco-animate">
-		          	<span class="subheading">Recently Added Jobs</span>
-		            <h2 class="mb-4">Hot Jobs</h2>
+		          	
+                    <h2 class="mb-4">Description de l'offre</h2>
+                    <hr>
 		          </div>
-				</div>
-				
-					<div class="row">
-					@foreach ( $offres as $offre )
-					
-				
-					<div class="col-md-12 ftco-animate">
-		            <div class="job-post-item py-4 d-block d-lg-flex align-items-center">
-		              <div class="one-third mb-4 mb-md-0">
-		                <div class="job-post-item-header d-flex align-items-center">
-		                  <h2 class="mr-3 text-black"><a href="/offer/{{ $offre->id }}/show">{{ $offre->name }}</a></h2>
-		                  <div class="badge-wrap">
-		                   <span class="bg-primary text-white badge py-2 px-3">{{ $offre->engagement }}</span>
-		                  </div>
-		                </div>
-		                <div class="job-post-item-body d-block d-md-flex">
-		                  <div class="mr-3"><span class="icon-layers"></span> <a href="#">{{$offre->societe->user->name}}</a></div>
-		                  <div><span class="icon-my_location"></span> <span>{{ $offre->location }}</span></div>
-		                </div>
-		              </div>
+		        </div>
+				<div class="row">
+                    <div class="col-md-6">
+                            <h4><i class="icon-file-text"></i> Description : </h4>
+                            <p>
+                                {{ $offer->description }}
+                            </p>
+                    </div>
+                    <div class="col-md-6">
+                            <h4><i class="icon-th-large"></i> Categorie : </h4>
+                            <p>
+                                {{ $categorie->name }}
+                            </p>
+                        </div>
+                        <div class="col-md-6">
+                            <h4> Contrat : </h4>
+                            <p>
+                                {{ $offer->contrat }}
+                            </p>
+                        </div>
+                        <div class="col-md-6">
+                            <h4><i class="icon-time"></i> Engagment : </h4>
+                            <p>
+                                {{ $offer->engagement }}
+                            </p>
+                        </div>
+                        <div class="col-md-6">
+                            <h4><i class="icon-home"></i> Adresse : </h4>
+                            <p>
+                                {{ $offer->location }}
+                            </p>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <h4><i class="icon-usd"></i> Salaire : </h4>
+                            <p>
+                                {{ $offer->salaire }} DT
+                            </p>
+                        </div>
+                        <div class="col-md-6">
+                            <a href="/condidature/{{ $offer->id }}" class="btn btn-primary"> <i class="icon-check"></i> Postuler</a>
 
-		              <div class="one-forth ml-auto d-flex align-items-center mt-4 md-md-0">
-		              	<div>
-			                <a href="#" class="icon text-center d-flex justify-content-center align-items-center icon mr-2">
-			                	<span class="icon-heart"></span>
-			                </a>
-		                </div>
-		                <a href="/condidature/{{ $offre->id }}" class="btn btn-primary py-2">Postuler</a>
-		              </div>
-		            </div>
-				  </div><!-- end -->
-				  @endforeach
 
+                    </div>
+                    
 							
-		          
-
-
-
 		        </div>
 		      </div>
-		      <div class="col-lg-3 sidebar">
-		        <div class="row justify-content-center pb-3">
-		          <div class="col-md-12 heading-section ftco-animate">
-		          	<span class="subheading">Recruitment agencies</span>
-		            <h2 class="mb-4">Top Recruitments</h2>
-		          </div>
-		        </div>
-		        <div class="sidebar-box ftco-animate">
-		        	<div class="border">
-			        	<a href="#" class="company-wrap"><img src="images/company-1.jpg" class="img-fluid" alt="Colorlib Free Template"></a>
-			        	<div class="text p-3">
-			        		<h3><a href="#">Google Company</a></h3>
-			        		<p><span class="number">500</span> <span>Open position</span></p>
-			        	</div>
-		        	</div>
-		        </div>
-		        <div class="sidebar-box ftco-animate">
-		        	<div class="border">
-			        	<a href="#" class="company-wrap"><img src="images/company-2.jpg" class="img-fluid" alt="Colorlib Free Template"></a>
-			        	<div class="text p-3">
-			        		<h3><a href="#">Facebook Company</a></h3>
-			        		<p><span class="number">700</span> <span>Open position</span></p>
-			        	</div>
-			        </div>
-		        </div>
-		        <div class="sidebar-box ftco-animate">
-		        	<div class="border">
-			        	<a href="#" class="company-wrap"><img src="images/company-3.jpg" class="img-fluid" alt="Colorlib Free Template"></a>
-			        	<div class="text p-3">
-			        		<h3><a href="#">IT Programming INC</a></h3>
-			        		<p><span class="number">700</span> <span>Open position</span></p>
-			        	</div>
-			        </div>
-		        </div>
-		      </div>
-				</div>
+		      	</div>
 			</div>
 		</section>
    
-    <section class="ftco-section ftco-counter img" id="section-counter" style="background-image: url(images/bg_1.jpg);" data-stellar-background-ratio="0.5">
+    <section class="ftco-section ftco-counter img" id="section-counter" style="background-image: url({{asset('images/bg_1.jpg')}});" data-stellar-background-ratio="0.5">
     	<div class="container">
     		<div class="row justify-content-center">
     			<div class="col-md-12">
@@ -402,7 +215,7 @@
             <div class="carousel-testimony owl-carousel ftco-owl">
               <div class="item">
                 <div class="testimony-wrap py-4 pb-5">
-                  <div class="user-img mb-4" style="background-image: url(images/person_1.jpg)">
+                  <div class="user-img mb-4" style="background-image: url({{asset('images/person_1.jpg')}})">
                     <span class="quote d-flex align-items-center justify-content-center">
                       <i class="icon-quote-left"></i>
                     </span>
@@ -416,7 +229,7 @@
               </div>
               <div class="item">
                 <div class="testimony-wrap py-4 pb-5">
-                  <div class="user-img mb-4" style="background-image: url(images/person_2.jpg)">
+                  <div class="user-img mb-4" style="background-image: url({{asset('images/person_2.jpg')}})">
                     <span class="quote d-flex align-items-center justify-content-center">
                       <i class="icon-quote-left"></i>
                     </span>
@@ -430,7 +243,7 @@
               </div>
               <div class="item">
                 <div class="testimony-wrap py-4 pb-5">
-                  <div class="user-img mb-4" style="background-image: url(images/person_3.jpg)">
+                  <div class="user-img mb-4" style="background-image: url({{asset('images/person_3.jpg')}})">
                     <span class="quote d-flex align-items-center justify-content-center">
                       <i class="icon-quote-left"></i>
                     </span>
@@ -444,7 +257,7 @@
               </div>
               <div class="item">
                 <div class="testimony-wrap py-4 pb-5">
-                  <div class="user-img mb-4" style="background-image: url(images/person_1.jpg)">
+                  <div class="user-img mb-4" style="background-image: url({{asset('images/person_1.jpg')}})">
                     <span class="quote d-flex align-items-center justify-content-center">
                       <i class="icon-quote-left"></i>
                     </span>
@@ -458,7 +271,7 @@
               </div>
               <div class="item">
                 <div class="testimony-wrap py-4 pb-5">
-                  <div class="user-img mb-4" style="background-image: url(images/person_1.jpg)">
+                  <div class="user-img mb-4" style="background-image: url({{asset('images/person_1.jpg')}})">
                     <span class="quote d-flex align-items-center justify-content-center">
                       <i class="icon-quote-left"></i>
                     </span>
@@ -491,42 +304,42 @@
         		<div class="carousel-candidates owl-carousel">
         			<div class="item">
 		        		<a href="#" class="team text-center">
-		        			<div class="img" style="background-image: url(images/person_1.jpg);"></div>
+		        			<div class="img" style="background-image: url({{asset('images/person_1.jpg')}});"></div>
 		        			<h2>Danica Lewis</h2>
 		        			<span class="position">Western City, UK</span>
 		        		</a>
         			</div>
         			<div class="item">
 	        			<a href="#" class="team text-center">
-		        			<div class="img" style="background-image: url(images/person_2.jpg);"></div>
+		        			<div class="img" style="background-image: url({{asset('images/person_2.jpg')}});"></div>
 		        			<h2>Nicole Simon</h2>
 		        			<span class="position">Western City, UK</span>
 		        		</a>
 	        		</div>
 	        		<div class="item">
 	        			<a href="#" class="team text-center">
-		        			<div class="img" style="background-image: url(images/person_3.jpg);"></div>
+		        			<div class="img" style="background-image: url({{asset('images/person_3.jpg')}});"></div>
 		        			<h2>Cloe Meyer</h2>
 		        			<span class="position">Western City, UK</span>
 		        		</a>
 	        		</div>
 	        		<div class="item">
 	        			<a href="#" class="team text-center">
-		        			<div class="img" style="background-image: url(images/person_4.jpg);"></div>
+		        			<div class="img" style="background-image: url({{asset('images/person_4.jpg')}});"></div>
 		        			<h2>Rachel Clinton</h2>
 		        			<span class="position">Western City, UK</span>
 		        		</a>
 	        		</div>
 	        		<div class="item">
 	        			<a href="#" class="team text-center">
-		        			<div class="img" style="background-image: url(images/person_5.jpg);"></div>
+		        			<div class="img" style="background-image: url({{asset('images/person_5.jpg')}});"></div>
 		        			<h2>Dave Buff</h2>
 		        			<span class="position">Western City, UK</span>
 		        		</a>
 	        		</div>
 	        		<div class="item">
 	        			<a href="#" class="team text-center">
-		        			<div class="img" style="background-image: url(images/person_6.jpg);"></div>
+		        			<div class="img" style="background-image: url({{asset('images/person_6.jpg')}});"></div>
 		        			<h2>Dave Buff</h2>
 		        			<span class="position">Western City, UK</span>
 		        		</a>
@@ -548,7 +361,7 @@
         <div class="row d-flex">
           <div class="col-md-3 d-flex ftco-animate">
             <div class="blog-entry align-self-stretch">
-              <a href="blog-single.html" class="block-20" style="background-image: url('images/image_1.jpg');">
+              <a href="blog-single.html" class="block-20" style="background-image: url({{asset('images/image_1.jpg')}});">
               </a>
               <div class="text mt-3">
               	<div class="meta mb-2">
@@ -562,7 +375,7 @@
           </div>
           <div class="col-md-3 d-flex ftco-animate">
             <div class="blog-entry align-self-stretch">
-              <a href="blog-single.html" class="block-20" style="background-image: url('images/image_2.jpg');">
+              <a href="blog-single.html" class="block-20" style="background-image: url({{asset('images/image_2.jpg')}});">
               </a>
               <div class="text mt-3">
               	<div class="meta mb-2">
@@ -576,7 +389,7 @@
           </div>
           <div class="col-md-3 d-flex ftco-animate">
             <div class="blog-entry align-self-stretch">
-              <a href="blog-single.html" class="block-20" style="background-image: url('images/image_3.jpg');">
+              <a href="blog-single.html" class="block-20" style="background-image: url({{asset('images/image_3.jpg')}});">
               </a>
               <div class="text mt-3">
               	<div class="meta mb-2">
@@ -590,7 +403,7 @@
           </div>
           <div class="col-md-3 d-flex ftco-animate">
             <div class="blog-entry align-self-stretch">
-              <a href="blog-single.html" class="block-20" style="background-image: url('images/image_4.jpg');">
+              <a href="blog-single.html" class="block-20" style="background-image: url({{asset('images/image_4.jpg')}});">
               </a>
               <div class="text mt-3">
               	<div class="meta mb-2">
