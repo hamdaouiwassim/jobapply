@@ -58,14 +58,23 @@ class SocietesController extends Controller
         ]);
 
 
-        $societe =Societe::find(Auth::user()->id);
+        $societe = auth()->user()->society;
         $societe->location=$request->input('location');
         $societe->phone=$request->input('phone');
         $societe->manincharge=$request->input('manincharge');
         $societe->description=$request->input('description');
         $societe->creationdate=$request->input('creationdate');
-        $societe->avatar=$request->input('avatar');
+        
         $societe->category=$request->input('category');
+        if ($request->file('avatar') != null ){
+            //dd($request);
+            $file = $request->file('avatar');
+            $filename=uniqid().'.'.$file->getClientOriginalExtension();
+            $destinationPath = 'uploads';
+            $file->move($destinationPath,$filename);
+            auth()->user()->avatar = $filename ;
+            auth()->user()->save();
+           }
         $societe->save();
         return redirect('/home');
 

@@ -14,7 +14,7 @@
                         </div>
                     @endif
      
-                      <form action="{{ route('modifysociety') }}" method='POST' class="bg-white p-1 contact-form">
+                      <form action="{{ route('modifysociety') }}" method='POST' class="bg-white p-1 contact-form" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
                           <label> Domaine de la societe </label>
