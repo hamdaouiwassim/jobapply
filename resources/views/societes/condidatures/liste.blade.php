@@ -22,7 +22,7 @@
                     @foreach( $offre->condidatures as $condidature )
                         <tr>
                             <td>{{ $condidature->condidate->firstname }}</td>
-                            <td><a href="" class="btn btn-primary">Voir cv </a></td>
+                        <td><a href="{{ asset('uploads')}}/{{ $condidature->condidate->cv  }}" class="btn btn-primary">Voir cv </a></td>
                             <td></td>
                         </tr>
                         
