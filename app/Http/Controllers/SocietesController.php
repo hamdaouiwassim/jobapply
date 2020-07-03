@@ -32,10 +32,18 @@ class SocietesController extends Controller
         $societe->manincharge=$request->input('manincharge');
         $societe->description=$request->input('description');
         $societe->creationdate=$request->input('creationdate');
-        $societe->avatar=$request->input('avatar');
+        
         $societe->category=$request->input('category');
         $societe->iduser=Auth::user()->id ;
-
+        if ($request->file('avatar') != null ){
+            //dd($request);
+            $file = $request->file('avatar');
+            $filename=uniqid().'.'.$file->getClientOriginalExtension();
+            $destinationPath = 'uploads';
+            $file->move($destinationPath,$filename);
+            auth()->user()->avatar = $filename ;
+            auth()->user()->save();
+           }
         
 
         $societe->save();

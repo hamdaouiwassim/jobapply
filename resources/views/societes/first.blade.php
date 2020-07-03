@@ -16,7 +16,7 @@
 
                     Pour que etre capable d'ajouter des offres d'emplois , il faut que remplir vos coordonnes . 
                         
-                      <form action="{{ route('completesociety') }}" method="post" class="bg-white p-1 contact-form">
+                      <form action="{{ route('completesociety') }}" method="post" class="bg-white p-1 contact-form" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
                           <label> Domaine de la societe </label>
@@ -74,7 +74,7 @@
                           </div>
                         <div class="form-group">
                             <label> Avatar </label>
-                          <input type="file" name="avatar" class="form-control" id="">
+                          <input type="file" name="avatar" class="form-control" >
                         </div>
                         <div class="form-group">
                           <input type="submit" value="Valider cette etape" class="btn btn-primary py-3 px-5">
