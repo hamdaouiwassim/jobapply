@@ -225,7 +225,7 @@
 		                  </div>
 		                </div>
 		                <div class="job-post-item-body d-block d-md-flex">
-		                  <div class="mr-3"><span class="icon-layers"></span> <a href="#">{{$offer->societe->user->name}} </a></div>
+                    <div class="mr-3"><span class="icon-layers"></span> <a href="/societe/{{ $offer->societe->id }}">{{$offer->societe->user->name}} </a></div>
 		                  <div><span class="icon-my_location"></span> <span>{{ $offer->location }}</span></div>
 		                </div>
 		              </div>

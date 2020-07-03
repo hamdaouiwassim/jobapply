@@ -15,4 +15,8 @@ class Stagaire extends Model
     {
         return $this->belongsTo('App\User');
     }
+    public function demandes()
+    {
+        return $this->hasMany('App\Demandesstage','userid','id');
+    }
 }

@@ -44,6 +44,19 @@ class OffersController extends Controller
     public function store(Request $request)
     {
         //
+        $offre = new Offre();
+        $offre->name = $request->input('name');
+        $offre->description = $request->input('description');
+        $offre->category = $request->input('categorie');
+        $offre->lastday = $request->input('lastday');
+        $offre->contrat = $request->input('contrat');
+        $offre->salaire = $request->input('salaire');
+        $offre->location = $request->input('location');
+        $offre->engagement = $request->input('engagement');
+        $offre->userid = auth()->user()->society->id;
+        $offre->save();
+        return redirect('/societe/offers');
+
     }
 
     /**

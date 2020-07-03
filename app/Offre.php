@@ -23,5 +23,9 @@ class Offre extends Model
     {
         return $this->belongsTo('App\Categorie','category','id');
     }
+    public function condidatures()
+    {
+        return $this->hasMany('App\Condidature','idoffer','id');
+    }
   
 }

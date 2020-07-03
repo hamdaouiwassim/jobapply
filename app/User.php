@@ -44,6 +44,10 @@ class User extends Authenticatable
      /**
      * Get the society for the selected user.
      */
+    public function admin()
+    {
+        return $this->hasOne('App\Admin','iduser','id');
+    }
     public function society()
     {
         return $this->hasOne('App\Societe','iduser','id');

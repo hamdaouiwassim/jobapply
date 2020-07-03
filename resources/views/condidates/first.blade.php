@@ -16,7 +16,8 @@
 
                     Pour que etre capable de postuler dans les defferents offres du travaille , il faut completer votre profile . 
                         
-                    <form action="#" class="bg-white p-1 contact-form">
+                      <form action="{{ route('addCondidateDb') }}" class="bg-white p-1 contact-form" enctype="multipart/form-data" method="post">
+                        @csrf
                         <div class="form-group">
                             <label> Votre Nom </label>
                           <input type="text" class="form-control" name="firstname" >
@@ -29,13 +30,17 @@
                             <label> Votre Telephone  </label>
                             <input type="text" class="form-control" name="phone" >
                           </div>
+                          <div class="form-group">
+                            <label> Diplome  </label>
+                            <input type="text" class="form-control" name="diplome" >
+                          </div>
                         <div class="form-group">
                             <label> Votre Etablissement Universitaire </label>
                           <input type="text" class="form-control" name="university" >
                         </div>
                         <div class="form-group">
                             <label> Votre Promotion  </label>
-                            <input type="number" class="form-control" name="promotion" >
+                            <input type="date" class="form-control" name="promotion" >
                         </div>
                         <div class="form-group">
                             <label> Votre Age </label>

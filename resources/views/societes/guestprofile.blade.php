@@ -89,7 +89,7 @@
                         <h4>Telephone : <span style="color:orange"> {{ $societe->phone }} </span></h4>
                         <hr />
                         @if ( Auth::user()->roles =="Condidate" )
-                            <a href="" class="btn btn-info">Liste des offres pour cette societe</a>
+                      <a href="{{ route('SocietesAllOffers',['id'=> $societe->id ])}}" class="btn btn-info">Liste des offres pour cette societe</a>
                         @elseif ( Auth::user()->roles =="Stagiaire" )
                       <a href="/stagaire/{{ $societe->iduser }}/demande" class="btn btn-info">Envoyer une demande de stage</a>
                         @endif

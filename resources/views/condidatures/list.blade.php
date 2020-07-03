@@ -73,15 +73,18 @@
     				<div class="browse-job p-5">
                         <a href="/condidate/offers" class="btn btn-success">Retour a liste des offres </a>
                         <hr />
-                        <table>
+                        <table class="table">
                             <thead>
-                                <th>Lettre</th>
-                                
+                              <tr>
+                                <th scope="col">Lettre</th>
+                                <th scope="col">Offre </th>
+                              </tr>
                             </thead>
                             <tbody>
                                 @foreach($condidatures as $condidature)
                                     <tr>
                                         <td> {{ $condidature->lettre }} </td>
+                                        <td> {{ $condidature->offre->name }} </td>
                                     </tr>
                                 @endforeach
                             </tbody>

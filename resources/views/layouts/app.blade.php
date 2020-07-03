@@ -40,8 +40,8 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'JobApply') }}
+                <a class="navbar-brand" href="{{ url('/home') }}">
+                    JobApply
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -72,14 +72,22 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    @if (Auth::user()->roles == "Societe")
+                                    @if (Auth::user()->roles == "Admin")
+                                    <a class="dropdown-item" href="{{ route('profile') }}">
+                                        Mon profile
+                                    </a>
+                                    <a class="dropdown-item" href="{{ route('usersListe') }}">
+                                        Liste utilisateurs
+                                    </a>
+                                   
+                                    @elseif (Auth::user()->roles == "Societe")
                                     <a class="dropdown-item" href="{{ route('profile') }}">
                                         Mon profile
                                     </a>
                                     <a class="dropdown-item" href="{{ route('offers') }}">
                                         Mes Offres
                                     </a>
-                                    <a class="dropdown-item" href="">
+                                    <a class="dropdown-item" href="{{ route('SocieteDemandes')}}">
                                         Mes Demandes
                                     </a>
                                     @elseif ( Auth::user()->roles == "Condidate" )

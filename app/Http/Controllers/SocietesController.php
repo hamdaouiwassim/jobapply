@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Societe;
 use App\User;
+use App\Demandesstage;
 use Auth;
 class SocietesController extends Controller
 {
@@ -34,6 +35,8 @@ class SocietesController extends Controller
         $societe->avatar=$request->input('avatar');
         $societe->category=$request->input('category');
         $societe->iduser=Auth::user()->id ;
+
+        
 
         $societe->save();
         return redirect('/home');
@@ -70,13 +73,38 @@ class SocietesController extends Controller
 
     public function profileSociete($id){
         
-        $societe = Societe::find($id);
-        $userSociete = User::find($societe->iduser);
+        $societe = Societe::findOrFail($id);
+        $userSociete = User::findOrFail($societe->iduser);
         return view("societes.guestprofile")->with('societe',$societe)->with("userSociete",$userSociete);
 
     }
     public function AllSocieties(){
         $societes = User::where('roles','Societe')->get();
         return view('societes.list')->with('societes',$societes);
+    }
+    public function SocietesAllOffers($id){
+
+        $societe = Societe::find($id);
+        return view("condidates.societes.listeoffers")->with('societe',$societe);
+
+    }
+    public function demandes(){
+        $demandes = auth()->user()->society->demandes;
+        return view('societes.demandes.liste')->with('demandes',$demandes);
+
+    }
+    public function validerDemande($id){
+            $demande = Demandesstage::findOrFail($id);
+            $demande->stat = "ACCEPTER";
+            $demande->save();
+            return redirect()->back();
+    }
+    
+    public function refuserDemande($id){
+        $demande = Demandesstage::findOrFail($id);
+        $demande->stat = "REFUSER";
+        $demande->save();
+        return redirect()->back();
+        
     }
 }

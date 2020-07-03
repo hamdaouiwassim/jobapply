@@ -102,7 +102,7 @@
 
 					  <div class="tab-pane fade show active" id="v-pills-2" role="tabpanel" aria-labelledby="v-pills-performance-tab">
 						  <form action="/condidate/offers/search" class="search-job" method="post">
-					  @csrf		              		<div class="row">
+					     @csrf		              		<div class="row">
 								  <div class="col-md">
 									  <div class="form-group">
 										  <div class="form-field">
@@ -270,7 +270,7 @@
 		                  </div>
 		                </div>
 		                <div class="job-post-item-body d-block d-md-flex">
-		                  <div class="mr-3"><span class="icon-layers"></span> <a href="#">{{$offre->societe->user->name}}</a></div>
+		                  <div class="mr-3"><span class="icon-layers"></span> <a href="#">@isset ($offre->societe->user->name) {{ $offre->societe->user->name}} @endisset</a></div>
 		                  <div><span class="icon-my_location"></span> <span>{{ $offre->location }}</span></div>
 		                </div>
 		              </div>

@@ -24,7 +24,12 @@ class HomeController extends Controller
   
     public function index()
     {
-        if ( Auth::user()->roles == "Societe"  ){
+        if ( Auth::user()->roles == "Admin"  ){
+            if (  Auth::user()->admin != null ){
+                return view('Admin.home');
+            }
+            return view('societes.first');
+        }elseif ( Auth::user()->roles == "Societe"  ){
             if (  Auth::user()->society != null ){
                 return view('societes.home');
             }
@@ -45,8 +50,12 @@ class HomeController extends Controller
 
     public function profile()
     {
-        
-        if ( Auth::user()->roles == "Societe"  ){
+        if ( Auth::user()->roles == "Admin"  ){
+            if (  Auth::user()->admin != null ){
+                return view('Admin.profile');
+            }
+            return view('Admin.first');
+        }else if ( Auth::user()->roles == "Societe"  ){
             if (  Auth::user()->society != null ){
                 return view('societes.profile')->with('societe',Auth::user()->society);
             }

@@ -41,7 +41,7 @@ class CondidaturesController extends Controller
     {
         //
         $condidature = new Condidature();
-        $condidature->idcondidate = Auth::user()->id ;
+        $condidature->idcondidate = Auth::user()->condidate->id ;
         $condidature->idoffer = $request->input('idoffer')  ;
         $condidature->lettre = $request->input('lettre')  ;
         $condidature->save();
@@ -96,9 +96,15 @@ class CondidaturesController extends Controller
 
     public function condidaturesCondidates(){
 
-        $condidatures = Condidature::Where("idcondidate",Auth::user()->id)
-                                    ->get();
+        $condidatures = auth()->user()->condidate->condidatures;
         return view("condidatures.list")->with("condidatures",$condidatures);
+
+    }
+
+    public function SocieteOfferCondidates($idoffer){
+        $offre = Offre::find($idoffer);
+        //dd($offre->condidatures[0]->condidate);
+        return view("societes.condidatures.liste")->with('offre',$offre);
 
     }
 }

@@ -87,7 +87,7 @@
                                         @php $i++; @endphp
                                             <tr>
                                                 <td>{{ $i }}</td>
-                                            <td>{{  }}</td>
+                                                <td>{{ $demande->societe->user->name }}</td>
                                                 <td>{{ $demande->stat }}</td>
                                             </tr>
                                             

@@ -23,6 +23,7 @@ class CreateSocietesTable extends Migration
             $table->string('category');
             $table->integer('iduser');
             $table->string('avatar')->nullable();
+            $table->string('etat')->default("EN COURS");
             $table->timestamps();
         });
     }

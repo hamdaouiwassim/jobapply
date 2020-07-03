@@ -27,5 +27,10 @@ class Societe extends Model
         return $this->hasMany('App\Offre','userid','id');
     }
 
+    public function demandes()
+    {
+        return $this->hasMany('App\Demandesstage','societeid','id');
+    }
+
    
 }

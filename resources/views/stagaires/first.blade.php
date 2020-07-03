@@ -16,7 +16,7 @@
 
                     Pour que etre capable d'ajouter des offres d'emplois , il faut que remplir vos coordonnes . 
                         
-                    <form action="/stagaire/add" class="bg-white p-1 contact-form">
+                    <form action="/stagaire/add" class="bg-white p-1 contact-form" method="POST" enctype="multipart/form-data">
                       @csrf
                         <div class="form-group">
                             <label> Nom </label>

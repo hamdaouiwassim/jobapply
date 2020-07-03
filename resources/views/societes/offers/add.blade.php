@@ -14,18 +14,18 @@
                         @csrf
                          <div class="form-group">
                             <label >Titre d'offre</label>
-                            <input type="text" class="form-control" name="offreName"  >
+                            <input type="text" class="form-control" name="name"  >
                           </div>
 
                           <div class="form-group">
                             <label >Description d'offre</label>
-                            <textarea  class="form-control"  name="offreDescription"></textarea>
+                            <textarea  class="form-control"  name="description"></textarea>
                           </div>
 
                           
                           <div class="form-group">
                             <label >Categorie d'offre</label>
-                            <select  class="form-control"  name="offreCategorie">
+                            <select  class="form-control"  name="categorie">
                               @foreach ( $categories as $categorie )
                                           <option value="{{ $categorie->id }}">
                                             {{ $categorie->name }}
@@ -38,16 +38,16 @@
                           </div>
                           <div class="form-group">
                             <label >Localisation  d'offre</label>
-                            <input type="text"  class="form-control"  name="offreLocation">
+                            <input type="text"  class="form-control"  name="location">
                           </div>
                           <div class="form-group">
                             <label >Dernier date pour cette offre</label>
-                            <input type="date"  class="form-control"  name="offreLastDay">
+                            <input type="date"  class="form-control"  name="lastday">
                           </div>
 
                           <div class="form-group">
                             <label >Type de contrat pour cette offre</label>
-                            <select  class="form-control"  name="offreContrat">
+                            <select  class="form-control"  name="contrat">
                                 <option value="CDD">
                                         CDD
                                 </option>
@@ -66,7 +66,7 @@
                           
                           <div class="form-group">
                             <label >Engagement du travaille pour cette offre</label>
-                            <select  class="form-control"  name="offreEngagement">
+                            <select  class="form-control"  name="engagement">
                                 <option value="Temps complet">
                                         Temps complet
                                 </option>
@@ -82,7 +82,7 @@
                           
                           <div class="form-group">
                             <label >Salaire proposer pour cette offre</label>
-                            <input type="number"  class="form-control"  name="offreSalaire">
+                            <input type="number"  class="form-control"  name="salaire">
                           </div>
                           <div class="form-group">
                             

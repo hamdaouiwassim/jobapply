@@ -15,4 +15,8 @@ class Condidate extends Model
     {
         return $this->belongsTo('App\User');
     }
+    public function condidatures()
+    {
+        return $this->hasMany('App\Condidature','idcondidate','id');
+    }
 }

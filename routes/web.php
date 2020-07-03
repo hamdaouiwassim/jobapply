@@ -13,15 +13,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'HomePagesController@welcome');
+
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomePagesController@welcome');
 Route::get('/about', 'HomePagesController@about')->name('about');
 Route::get('/blog', 'HomePagesController@blog')->name('blog');
 Route::get('/contact', 'HomePagesController@contact')->name('contact');
 
+
+Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/profile', 'HomeController@profile')->name('profile');
@@ -43,6 +45,32 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/offre/postuler', 'CondidaturesController@store')->name('condidatureStore');
     Route::get('/societe/{id}', 'SocietesController@profileSociete')->name('profileSociete');
     Route::get('/societes/all', 'SocietesController@AllSocieties')->name('SocieteAll');
+    Route::get('/societe/{id}/offers', 'SocietesController@SocietesAllOffers')->name('SocietesAllOffers');
     Route::post('/stagaire/add','StagairesController@StagaireStore')->name('StagaireStore');
+
+    // Profile condidate
+    Route::get('/condidate/offer/{id}/condidates', 'CondidaturesController@SocieteOfferCondidates');
+    Route::post('/condidate/add/db', 'CondidatesController@store')->name('addCondidateDb');
+    Route::post('/condidate/me/update', 'CondidatesController@update')->name("CondidateUpdate");
+    // Profile societe
+    Route::get('/societe/offer/{id}/condidates', 'CondidaturesController@SocieteOfferCondidates')->name('SocieteOfferCondidates');  
+    Route::get('/societe/demandes/liste', 'SocietesController@demandes')->name('SocieteDemandes');  
+    Route::get('/societe/demande/{id}/valider', 'SocietesController@validerDemande')->name("validerDemande");
+    Route::get('/societe/demande/{id}/refuser', 'SocietesController@refuserDemande')->name("refuserDemande");
+
+    // Profile Admin
+    Route::get('/admin/offer/{id}/condidates', 'CondidaturesController@SocieteOfferCondidates'); 
+    Route::get('/admin/users', 'AdminsController@usersListe')->name("usersListe");
+    Route::get('/admin/users/societe/{id}/valider', 'AdminsController@validerSociete')->name("validerSociete");
+    Route::get('/admin/users/societe/{id}/refuser', 'AdminsController@refuserSociete')->name("refuserSociete");
+    Route::post('/admin/me/update', 'AdminsController@UpdateProfile')->name("UpdateProfile");
+
+
+
+    // Profile Stagaire
+    Route::post('/stagaire/profile/update', 'StagairesController@StagaireUpdate')->name('StagaireUpdate'); 
+    Route::get('/stagaire/offer/{id}/condidates', 'CondidaturesController@SocieteOfferCondidates');  
+    
+
 
 });
